@@ -1,0 +1,26 @@
+CREATE DATABASE Pessoas;
+
+USE Pessoas;
+
+CREATE TABLE Pessoa(
+		idPessoa	INT PRIMARY KEY IDENTITY,
+		Nome		VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Telefone(
+		idTelefone  INT PRIMARY KEY IDENTITY,
+		Descrição   VARCHAR(255) NOT NULL,
+		idPessoa    INT FOREIGN KEY REFERENCES Pessoa(idPessoa)
+);
+
+CREATE TABLE Emails(
+		idEmail		INT PRIMARY KEY IDENTITY,
+		Descrição   VARCHAR(255) NOT NULL,
+		idPessoa	INT FOREIGN KEY REFERENCES Pessoa(idPessoa)
+);
+
+CREATE TABLE CNHs(
+		idCNH		INT PRIMARY KEY IDENTITY,
+		Descrição	VARCHAR(255) NOT NULL,
+		idPessoa	INT FOREIGN KEY REFERENCES Pessoa(idPessoa)
+);

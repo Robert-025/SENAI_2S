@@ -1,0 +1,36 @@
+instituições
+	idInstituicao
+	razãoSocial
+	cnpj
+	endereço
+
+tiposUsuarios
+	idTipo
+	tituloTipoUsuario
+
+usuarios
+	idUsuario
+	idTipo
+	nome	
+	email
+	senha
+
+tiposConsultas
+	idTipoConsultas
+	tituloConsulta
+
+consultas
+	idConsulta
+	idTipoConsulta
+	idInstituição
+	dataConsulta
+	descricao
+
+presencas
+	idPresenca
+	idUsuario
+	idConsulta
+	situacao - 
+
+
+
