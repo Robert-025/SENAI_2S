@@ -1,0 +1,3 @@
+USE SPMEDICALGROUP;
+
+SELECT * FROM pacientes;

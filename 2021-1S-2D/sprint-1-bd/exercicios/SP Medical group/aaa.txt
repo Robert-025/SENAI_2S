@@ -1,0 +1,30 @@
+10. Utilizar linguagem de manipulação
+--------------
+Inseriu os dados na tabela de usuários de acordo com as colunas criadas no item 9 e especificadas na situação
+problema
+Atualizou os registros que não possuem data de nascimento conforme especificado pelo cliente
+
+6. Normalizar a estrutura do banco de dados
+------------------
+Utilizou a primeira, a segunda e a terceira formas normais de banco de dados
+****Utilizou a quarta e a quinta formas normais de banco de dados
+
+13. Executar importação e exportação da base de dados
+-----------
+Importou os dados para o banco de dados criado de acordo com a planilha recebida
+Os dados importados estão de acordo com os dados da planilha recebida
+****Exportou a base de dados para um arquivo .sql
+****Exportou a base de dados para um arquivo .csv
+
+11. Utilizar funções nativas do banco de dados
+---------
+Mostrou a quantidade de usuários após realizar a importação do banco de dados
+Converteu a data de nascimento do usuário para o formato (mm-dd-yyyy) na exibição
+****Calculou a idade do usuário a partir da data de nascimento
+
+12. Aplicar programação em banco de dados utilizando functions, stored procedures,
+triggers e eventos
+----------
+****Criou um evento para que a idade do usuário seja calculada todos os dias
+Criou uma função para retornar a quantidade de médicos de uma determinada especialidade
+Criou uma função para que retorne a idade do usuário a partir de uma determinada stored procedure

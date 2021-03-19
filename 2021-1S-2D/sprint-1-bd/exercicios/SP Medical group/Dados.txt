@@ -1,9 +1,3 @@
-instituições
-	idInstituicao
-	razãoSocial
-	cnpj
-	endereço
-
 tiposUsuarios
 	idTipo
 	tituloTipoUsuario
@@ -13,24 +7,44 @@ usuarios
 	idTipo
 	nome	
 	email
-	senha
 
-tiposConsultas
-	idTipoConsultas
-	tituloConsulta
+pacientes
+	idPaciente
+	idUsuario
+	dataNasciemnto
+	telefone
+	rg
+	cpf
+	endereco
+
+medico
+	idMedico
+	idUsuario
+	crm
+	idEspecialidade
+	idClinica
+
+especialidades
+	idEspecialidade
+	nome
+
+clinicas
+	idClinica
+	razãoSocial
+	nomeClinica
+	cnpj
+	endereço
 
 consultas
 	idConsulta
-	idTipoConsulta
-	idInstituição
+	idPaciente
+	idMedico
 	dataConsulta
 	descricao
 
-presencas
-	idPresenca
-	idUsuario
+situacao
+	idSitiacao
 	idConsulta
-	situacao - 
-
-
+	idpaciente
+	situacao
 

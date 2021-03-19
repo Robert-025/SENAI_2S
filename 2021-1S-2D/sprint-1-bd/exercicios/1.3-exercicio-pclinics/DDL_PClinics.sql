@@ -47,3 +47,9 @@ CREATE TABLE Atendimentos(
 		idVeterinario	INT FOREIGN KEY REFERENCES Veterinários(idVeterinario),
 		idPet			INT FOREIGN KEY REFERENCES Pets(idPet)
 );
+
+ALTER TABLE Clinicas
+DROP COLUMN CNPJ;
+
+ALTER TABLE Clinicas
+ADD CNPJ BIGINT UNIQUE;
