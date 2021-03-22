@@ -76,3 +76,13 @@ CREATE TABLE consultas
 	idSituacao			INT FOREIGN KEY REFERENCES situacoes(idSituacao) DEFAULT (1)
 );
 GO
+
+ALTER TABLE clinicas
+ADD horarioAbertura TIME;
+
+ALTER TABLE clinicas
+ADD horarioFechamento TIME;
+
+ALTER TABLE usuarios
+ADD senha VARCHAR(20);
+-- Não coloquei not null porque não permitiu, e esqueci de colocar
