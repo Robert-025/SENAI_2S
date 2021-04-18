@@ -100,7 +100,7 @@ namespace senai_TPeoples_webApi.Controllers
             //Cria um objeto que irá receber o funcionario buscado no banco de dados
             FuncionarioDomain funcionarioBuscado = _funcionarioRepository.BuscarPorId(id);
 
-            //
+            // Caso não seja encontrado, retorna NotFound 
             if (funcionarioBuscado == null)
             {
                 return NotFound("Funcionário não encontrado");
@@ -111,6 +111,7 @@ namespace senai_TPeoples_webApi.Controllers
             {
                 //Chamamos o método .AtualizarIdUrl()
                 _funcionarioRepository.AtualizarIdUrl(id, funcionario);
+
 
                 return NoContent();
             }

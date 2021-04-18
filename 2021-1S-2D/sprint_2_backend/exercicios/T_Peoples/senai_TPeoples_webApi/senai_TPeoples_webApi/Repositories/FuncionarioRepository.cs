@@ -35,7 +35,7 @@ namespace senai_TPeoples_webApi.Repositories
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
                 //Declara a query que será executada
-                string queryUpdateIdUrl = "UPDATE funcionarios SET nome = @nome, sobrenome = @sobrenome WHERE idFuncionario = @idFuncionario";
+                string queryUpdateIdUrl = "UPDATE funcionarios SET nome = @nome, sobrenome = @sobrenome WHERE idFuncionario = @id";
 
                 //Declara o SqlCommand cmd passando a query que será executada e a conexão como parâmetros
                 using (SqlCommand cmd = new SqlCommand(queryUpdateIdUrl, con))
