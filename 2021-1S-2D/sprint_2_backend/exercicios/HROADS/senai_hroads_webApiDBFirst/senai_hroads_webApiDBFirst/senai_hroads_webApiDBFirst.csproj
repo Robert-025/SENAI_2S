@@ -6,9 +6,6 @@
 
   <ItemGroup>
     <Folder Include="Domains\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
