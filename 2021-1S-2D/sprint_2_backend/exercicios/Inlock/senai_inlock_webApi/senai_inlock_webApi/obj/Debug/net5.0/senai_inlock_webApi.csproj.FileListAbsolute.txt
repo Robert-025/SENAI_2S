@@ -28,3 +28,10 @@ C:\Users\10\Documents\Curso\SENAI_2S\2021-1S-2D\sprint_2_backend\exercicios\Inlo
 C:\Users\10\Documents\Curso\SENAI_2S\2021-1S-2D\sprint_2_backend\exercicios\Inlock\senai_inlock_webApi\senai_inlock_webApi\obj\Debug\net5.0\ref\senai_inlock_webApi.dll
 C:\Users\10\Documents\Curso\SENAI_2S\2021-1S-2D\sprint_2_backend\exercicios\Inlock\senai_inlock_webApi\senai_inlock_webApi\obj\Debug\net5.0\senai_inlock_webApi.pdb
 C:\Users\10\Documents\Curso\SENAI_2S\2021-1S-2D\sprint_2_backend\exercicios\Inlock\senai_inlock_webApi\senai_inlock_webApi\obj\Debug\net5.0\senai_inlock_webApi.genruntimeconfig.cache
+C:\Users\10\Documents\Curso\SENAI_2S\2021-1S-2D\sprint_2_backend\exercicios\Inlock\senai_inlock_webApi\senai_inlock_webApi\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\10\Documents\Curso\SENAI_2S\2021-1S-2D\sprint_2_backend\exercicios\Inlock\senai_inlock_webApi\senai_inlock_webApi\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\10\Documents\Curso\SENAI_2S\2021-1S-2D\sprint_2_backend\exercicios\Inlock\senai_inlock_webApi\senai_inlock_webApi\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\10\Documents\Curso\SENAI_2S\2021-1S-2D\sprint_2_backend\exercicios\Inlock\senai_inlock_webApi\senai_inlock_webApi\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\10\Documents\Curso\SENAI_2S\2021-1S-2D\sprint_2_backend\exercicios\Inlock\senai_inlock_webApi\senai_inlock_webApi\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\10\Documents\Curso\SENAI_2S\2021-1S-2D\sprint_2_backend\exercicios\Inlock\senai_inlock_webApi\senai_inlock_webApi\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\10\Documents\Curso\SENAI_2S\2021-1S-2D\sprint_2_backend\exercicios\Inlock\senai_inlock_webApi\senai_inlock_webApi\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll

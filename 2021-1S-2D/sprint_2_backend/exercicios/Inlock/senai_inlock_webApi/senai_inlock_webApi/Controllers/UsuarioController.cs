@@ -1,11 +1,15 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using senai_inlock_webApi.Domains;
 using senai_inlock_webApi.Interfaces;
 using senai_inlock_webApi.Repositories;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace senai_inlock_webApi.Controllers
@@ -38,6 +42,8 @@ namespace senai_inlock_webApi.Controllers
         /// Lista todos os usuarios
         /// </summary>
         /// <returns>Retorna um status code 200 - ok com a lista</returns>
+        /// O usuario precisa estar logado
+        [Authorize(Roles = "1, 2")] //Verifica se o usuario esta logado
         [HttpGet]
         public IActionResult Get()
         {
@@ -53,6 +59,8 @@ namespace senai_inlock_webApi.Controllers
         /// </summary>
         /// <param name="usuario">Usuario com os parâmetros que serão cadastrados</param>
         /// <returns>Um status code 201 - created</returns>
+        /// Somente o administrador poderar cadastrar
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Post(UsuarioDomain usuario)
         {
@@ -68,6 +76,8 @@ namespace senai_inlock_webApi.Controllers
         /// </summary>
         /// <param name="id">Id do usuario que será deletado</param>
         /// <returns>Retorna um status code 204 - NoContent</returns>
+        /// Somente o administrador poderar cadastrar
+        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -134,6 +144,60 @@ namespace senai_inlock_webApi.Controllers
                 //Retorna um BadRequest com um código de erro
                 return BadRequest(codErro);
             }
+        }
+
+        /// <summary>
+        /// Faz a autenticação do usuario
+        /// </summary>
+        /// <param name="login">Objeto com os dados do email e senha</param>
+        /// <returns>Um status code e, em caso de sucesso, os dados do usuario buscado</returns>
+        [HttpPost("login")]
+        public IActionResult Login(UsuarioDomain login)
+        {
+            //Busca o usuario pelo email e senha informados 
+            UsuarioDomain usuarioBuscado = _usuarioRepository.BuscarPorEmailSenha(login.email, login.senha);
+
+            //Verifica se encontrou algum usuario com o email e a senha informados
+            if (usuarioBuscado == null)
+            {
+                //Caso não encontre, retorna um NotFound com uma mensagem personalizada
+                return NotFound("Email ou senha inválidos!");
+            }
+
+            //Caso encontre, continua para a criação do token
+
+            //Define os dados que serão fornecidos no token
+            var claims = new[]
+            {
+                                          //TipoDaClaim, ValorDaClaim
+                new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.idUsuario.ToString()),
+                new Claim(JwtRegisteredClaimNames.Name, usuarioBuscado.nome),
+                new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.email),
+                new Claim(ClaimTypes.Role, usuarioBuscado.idTipoUsuario.ToString()),
+                new Claim("Claim personalizada", "Teste")
+            };
+
+            //Define a chave de acesso do token
+            var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("inlock-chave-autenticacao"));
+
+            //Define as credencias do token - Header
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            //Define a composição do token
+            var token = new JwtSecurityToken(
+                issuer : "Inlock.webApi",               //Define o emissor do token
+                audience : "Inlock.webApi",             //Define o destinatário do token
+                claims : claims,                        //Define os dados definidos acima( linha 163, var claims)
+                expires : DateTime.Now.AddMinutes(30),  //Tempo de expiração
+                signingCredentials : creds              //Credenciais do token, feita na linha 177
+            );
+
+            //Retorna um status code 200 - OK com o token criado
+            return Ok(new
+            {
+                //Escreve, amrmazena e retorna o token com o Ok da requisição
+                token = new JwtSecurityTokenHandler().WriteToken(token)
+            });
         }
     }
 }

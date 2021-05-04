@@ -12,6 +12,10 @@ namespace senai_inlock_webApi.Repositories
     {
         private string stringConexao = "Data Source=ROBERT-025; initial catalog=Inlock_Games_Tarde; user id=sa; pwd=senai@132";
 
+        /// <summary>
+        /// Atualiza um usuario existente pelo seu Id
+        /// </summary>
+        /// <param name="id">Id do usuario que será atualizado</param>
         public void AtualizarPorId(int id, UsuarioDomain usuario)
         {
             //Declara um SqlConnection passando a stringConexao como parâmetro
@@ -31,7 +35,7 @@ namespace senai_inlock_webApi.Repositories
                     cmd.Parameters.AddWithValue("@idUsuario", id);
 
                     //Abre conexão com o banco de dados
-                    con.Open();
+                    con.Open(); 
 
                     //Executa a query
                     cmd.ExecuteNonQuery();
@@ -39,6 +43,11 @@ namespace senai_inlock_webApi.Repositories
             }
         }
 
+        /// <summary>
+        /// Busca um usuario pelo seu ID
+        /// </summary>
+        /// <param name="id">Id do usuario que será buscado</param>
+        /// <returns>O usuario buscado</returns>
         public UsuarioDomain BuscarPorId(int id)
         {
             //Declara um SqlConnection passando a stringConexao como parâmetro
@@ -85,6 +94,10 @@ namespace senai_inlock_webApi.Repositories
             }
         }
 
+        /// <summary>
+        /// Cadastra um novo usuario
+        /// </summary>
+        /// <param name="usuario">Usuario com as informações</param>
         public void Cadastrar(UsuarioDomain usuario)
         {
             //Declara um SqlConnection passando a stringConexao como parâmetro
@@ -111,6 +124,10 @@ namespace senai_inlock_webApi.Repositories
             }
         }
 
+        /// <summary>
+        /// Deleta um usuario pelo seu id
+        /// </summary>
+        /// <param name="id">Id do usuario que vai ser deletado</param>
         public void Deletar(int id)
         {
             //Declara um SqlConnection passando a stringConexao como parâmetro
@@ -134,6 +151,10 @@ namespace senai_inlock_webApi.Repositories
             }
         }
 
+        /// <summary>
+        /// Lista todos os usuarios
+        /// </summary>
+        /// <returns>Uma lista de usuarios</returns>
         public List<UsuarioDomain> ListarTodos()
         {
             //Declara uma lista que vai receber os usuarios e mostrar no final
@@ -180,6 +201,55 @@ namespace senai_inlock_webApi.Repositories
             }
 
 
+        }
+
+        /// <summary>
+        /// Valida o usuario
+        /// </summary>
+        /// <param name="email">Email do usuario</param>
+        /// <param name="senha">Senha do usuario</param>
+        /// <returns>O usuario buscado</returns>
+        public UsuarioDomain BuscarPorEmailSenha(string email, string senha)
+        {
+            //Define a conexão con passando a stringConexao
+            using (SqlConnection con = new SqlConnection(stringConexao))
+            {
+                //Define o comando que será executada
+                string querySelect = "SELECT idUsuario, nome, email, senha, idTipoUsuario FROM usuarios WHERE email = @email AND senha = @senha";
+
+                //Declara um SqlCommand passando o comando(query) que vai ser executado e a conexão(con)
+                using (SqlCommand cmd = new SqlCommand(querySelect, con))
+                {
+                    cmd.Parameters.AddWithValue("@email", email);
+                    cmd.Parameters.AddWithValue("@senha", senha);
+
+                    //Abre a conexão com o banco de dados
+                    con.Open();
+
+                    //Executa o comando e armazena os dados no objeto rd
+                    SqlDataReader rdr = cmd.ExecuteReader();
+
+                    if (rdr.Read())
+                    {
+                        //Cria um objeto usuarioBuscado
+                        UsuarioDomain usuarioBuscado = new UsuarioDomain
+                        {
+                            //Atribui os valores das colunas as prorpiedades
+                            idUsuario = Convert.ToInt32(rdr["idUsuario"]),
+                            nome = rdr["nome"].ToString(),
+                            email = rdr["email"].ToString(),
+                            senha = rdr["senha"].ToString(),
+                            idTipoUsuario = Convert.ToInt32(rdr["idTipoUsuario"])
+                        };
+
+                        //Retorna o objeto usuarioBuscado
+                        return usuarioBuscado;
+                    }
+
+                    //Caso não encontre um email e senh correspondentes, retorna null
+                    return null;
+                }
+            }
         }
     }
 }

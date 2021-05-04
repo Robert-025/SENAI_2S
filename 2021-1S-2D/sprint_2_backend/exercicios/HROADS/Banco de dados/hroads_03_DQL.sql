@@ -2,6 +2,10 @@ USE SENAI_HROADS_TARDE;
 
 SELECT * FROM Personagem;
 
+SELECT * FROM Usuarios;
+
+SELECT * FROM TiposUsuarios;
+
 SELECT * FROM Classe;
 
 SELECT Nome FROM Classe;

@@ -41,5 +41,13 @@ namespace senai_inlock_webApi.Interfaces
         /// </summary>
         /// <param name="id">Id do usuario que vai ser deletado</param>
         void Deletar(int id);
+
+        /// <summary>
+        /// Valida o usuario
+        /// </summary>
+        /// <param name="email">Email do usuario</param>
+        /// <param name="senha">Senha do usuario</param>
+        /// <returns>O usuario buscado</returns>
+        UsuarioDomain BuscarPorEmailSenha(string email, string senha); 
     }
 }
