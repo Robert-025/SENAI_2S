@@ -34,6 +34,7 @@ namespace senai_inlock_webApi.Interfaces
         /// Atualiza um usuario existente pelo seu Id
         /// </summary>
         /// <param name="id">Id do usuario que será atualizado</param>
+        /// <param name="usuario">Objeto com as informações que serão atualizadas</param>
         void AtualizarPorId(int id, UsuarioDomain usuario);
 
         /// <summary>

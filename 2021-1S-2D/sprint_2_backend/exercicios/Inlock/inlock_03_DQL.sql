@@ -9,6 +9,9 @@ SELECT * FROM estudios;
 -- Listar todos os jogos
 SELECT * FROM jogos;
 
+-- Listar todos os tipos de usuario
+SELECT * FROM tiposUsuario;
+
 -- Lista todos os jogos e seus respectivos estúdios
 SELECT nomejogo[Jogo], nomeEstudio[Estúdio], descricao, dataLancamento, valor
 FROM jogos J

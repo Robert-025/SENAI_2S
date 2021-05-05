@@ -16,6 +16,7 @@ namespace senai_inlock_webApi.Repositories
         /// Atualiza um usuario existente pelo seu Id
         /// </summary>
         /// <param name="id">Id do usuario que será atualizado</param>
+        /// <param name="usuario">Objeto com as informações que serão atualizadas</param>
         public void AtualizarPorId(int id, UsuarioDomain usuario)
         {
             //Declara um SqlConnection passando a stringConexao como parâmetro

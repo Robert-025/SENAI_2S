@@ -35,3 +35,10 @@ C:\Users\10\Documents\Curso\SENAI_2S\2021-1S-2D\sprint_2_backend\exercicios\Inlo
 C:\Users\10\Documents\Curso\SENAI_2S\2021-1S-2D\sprint_2_backend\exercicios\Inlock\senai_inlock_webApi\senai_inlock_webApi\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\10\Documents\Curso\SENAI_2S\2021-1S-2D\sprint_2_backend\exercicios\Inlock\senai_inlock_webApi\senai_inlock_webApi\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\10\Documents\Curso\SENAI_2S\2021-1S-2D\sprint_2_backend\exercicios\Inlock\senai_inlock_webApi\senai_inlock_webApi\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\10\Documents\Curso\SENAI_2S\2021-1S-2D\sprint_2_backend\exercicios\Inlock\senai_inlock_webApi\senai_inlock_webApi\bin\Debug\net5.0\senai_inlock_webApi.xml
+C:\Users\10\Documents\Curso\SENAI_2S\2021-1S-2D\sprint_2_backend\exercicios\Inlock\senai_inlock_webApi\senai_inlock_webApi\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\10\Documents\Curso\SENAI_2S\2021-1S-2D\sprint_2_backend\exercicios\Inlock\senai_inlock_webApi\senai_inlock_webApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\10\Documents\Curso\SENAI_2S\2021-1S-2D\sprint_2_backend\exercicios\Inlock\senai_inlock_webApi\senai_inlock_webApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\10\Documents\Curso\SENAI_2S\2021-1S-2D\sprint_2_backend\exercicios\Inlock\senai_inlock_webApi\senai_inlock_webApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\10\Documents\Curso\SENAI_2S\2021-1S-2D\sprint_2_backend\exercicios\Inlock\senai_inlock_webApi\senai_inlock_webApi\obj\Debug\net5.0\senai_inlock_webApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\10\Documents\Curso\SENAI_2S\2021-1S-2D\sprint_2_backend\exercicios\Inlock\senai_inlock_webApi\senai_inlock_webApi\obj\Debug\net5.0\senai_inlock_webApi.xml
